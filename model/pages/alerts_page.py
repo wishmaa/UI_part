@@ -9,3 +9,4 @@ class AlertPage:
         browser.driver.execute_script("$('footer').remove()")
         browser.driver.execute_script("$('#fixedban').remove()")
         return self
+

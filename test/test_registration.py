@@ -40,7 +40,7 @@ def test_registration_only_required(setup_browser):
     reg_page = RegPage()
 
     user_required_fields = UserRequired(
-        first_name='petr',
+        first_name='Petr',
         last_name='Lastname',
         gender='Male',
         phone='1234567890'

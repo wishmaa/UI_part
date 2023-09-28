@@ -89,3 +89,4 @@ class RegPage:
             )
         )
         return self
+

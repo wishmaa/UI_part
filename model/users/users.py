@@ -24,3 +24,4 @@ class UserRequired:
     last_name: str
     gender: str
     phone: str
+
