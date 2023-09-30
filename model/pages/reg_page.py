@@ -90,3 +90,18 @@ class RegPage:
         )
         return self
 
+    def check_firstname(self):
+        browser.element('#firstName').should(have.css_property('border-color', value='rgb(220, 53, 69)'))
+        return self
+
+    def check_lastname(self):
+        browser.element('#lasttName').should(have.css_property('border-color', value='rgb(220, 53, 69)'))
+        return self
+
+    def check_gender(self):
+        browser.element('[for^="gender-radio"]').should(have.css_property('border-color', value='rgb(220, 53, 69)'))
+        return self
+
+    def check_phone(self):
+        browser.element('#userNumber').should(have.css_property('border-color', value='rgb(220, 53, 69)'))
+        return self

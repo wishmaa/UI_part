@@ -3,11 +3,26 @@ from model.pages.reg_page import RegPage
 from model.users.users import User, UserRequired
 import allure
 
+reg_page = RegPage()
 
-@allure.title("Test registration with full form")
+
+@allure.title("Test registration with empty form")
+def test_empty_registration_form(setup_browser):
+    with allure.step('Open browser'):
+        reg_page.open()
+    with allure.step('Submit empty form'):
+        reg_page.submitting()
+    with allure.step('Check highlighting required fields'):
+        reg_page\
+            .check_firstname()\
+            .check_lastname()\
+            .check_gender()\
+            .check_phone()
+
+
+@allure.title("Test registration with filling full form")
 def test_registration_fill_all_form(setup_browser):
     # Open registration form
-    reg_page = RegPage()
 
     Newreguser = User(
         first_name='petr',
@@ -34,10 +49,9 @@ def test_registration_fill_all_form(setup_browser):
         reg_page.should_have_user_information(Newreguser)
 
 
-@allure.title("Test registration with required fields")
+@allure.title("Test registration with filling required fields")
 def test_registration_only_required(setup_browser):
     # Open registration form
-    reg_page = RegPage()
 
     user_required_fields = UserRequired(
         first_name='Petr',
@@ -54,6 +68,3 @@ def test_registration_only_required(setup_browser):
 
     with allure.step('Check registration'):
         reg_page.should_have_user_information(user_required_fields)
-
-
-
