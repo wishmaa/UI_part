@@ -5,7 +5,7 @@ buttons = ButtonsPage()
 
 
 @allure.title("Test doubleclick button")
-def test_doubleclick_button(setup_browser):
+def test_doubleclick_button():
     with allure.step("Open buttons page"):
         buttons.open()
     with allure.step("Make doubleclick"):
@@ -15,7 +15,7 @@ def test_doubleclick_button(setup_browser):
 
 
 @allure.title("Test right click button")
-def test_right_click_button(setup_browser):
+def test_right_click_button():
     with allure.step("Open buttons page"):
         buttons.open()
     with allure.step("Make right click"):

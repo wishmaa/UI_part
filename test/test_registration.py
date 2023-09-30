@@ -7,7 +7,7 @@ reg_page = RegPage()
 
 
 @allure.title("Test registration with empty form")
-def test_empty_registration_form(setup_browser):
+def test_empty_registration_form():
     with allure.step('Open browser'):
         reg_page.open()
     with allure.step('Submit empty form'):
@@ -17,8 +17,7 @@ def test_empty_registration_form(setup_browser):
 
 
 @allure.title("Test registration with filling full form")
-def test_registration_fill_all_form(setup_browser):
-    # Open registration form
+def test_registration_fill_all_form():
 
     Newreguser = User(
         first_name='petr',
@@ -44,8 +43,7 @@ def test_registration_fill_all_form(setup_browser):
 
 
 @allure.title("Test registration with filling required fields")
-def test_registration_only_required(setup_browser):
-    # Open registration form
+def test_registration_only_required():
 
     user_required_fields = UserRequired(
         first_name='Petr',

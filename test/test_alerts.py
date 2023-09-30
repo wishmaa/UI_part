@@ -5,7 +5,7 @@ alerts = AlertPage()
 
 
 @allure.title("Alert confirmation")
-def test_alert_confirmation(setup_browser):
+def test_alert_confirmation():
     with allure.step("Open alert page"):
         alerts.open()
     with allure.step("Click button for trigger alert"):
@@ -15,7 +15,7 @@ def test_alert_confirmation(setup_browser):
 
 
 @allure.title("Alert cancel")
-def test_alert_cancel(setup_browser):
+def test_alert_cancel():
     with allure.step("Open alert page"):
         alerts.open()
     with allure.step("Click button for trigger alert"):
@@ -25,7 +25,7 @@ def test_alert_cancel(setup_browser):
 
 
 @allure.title("Check alert prompt box")
-def test_alert_prompt_box(setup_browser):
+def test_alert_prompt_box():
     with allure.step("Open alert page"):
         alerts.open()
     with allure.step("Click prompt button"):
