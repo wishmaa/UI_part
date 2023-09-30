@@ -13,11 +13,7 @@ def test_empty_registration_form(setup_browser):
     with allure.step('Submit empty form'):
         reg_page.submitting()
     with allure.step('Check highlighting required fields'):
-        reg_page\
-            .check_firstname()\
-            .check_lastname()\
-            .check_gender()\
-            .check_phone()
+        reg_page.check_required_fields()
 
 
 @allure.title("Test registration with filling full form")
@@ -41,10 +37,8 @@ def test_registration_fill_all_form(setup_browser):
 
     with allure.step('Open browser'):
         reg_page.open()
-
     with allure.step('Fill form'):
         reg_page.fill_all_form(Newreguser)
-
     with allure.step('Check registration'):
         reg_page.should_have_user_information(Newreguser)
 
@@ -62,9 +56,8 @@ def test_registration_only_required(setup_browser):
 
     with allure.step('Open browser'):
         reg_page.open()
-
     with allure.step('Fill required fields'):
         reg_page.fill_required_fields(user_required_fields)
-
     with allure.step('Check registration'):
-        reg_page.should_have_user_information(user_required_fields)
+        reg_page.check_filled_fields(user_required_fields)
+

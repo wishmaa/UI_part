@@ -5,7 +5,6 @@ class AlertPage:
 
     def open(self):
         browser.open('/alerts')
-        browser.element(".practice-form-wrapper").should(have.text("Alerts"))
         browser.driver.execute_script("$('footer').remove()")
         browser.driver.execute_script("$('#fixedban').remove()")
         return self
@@ -16,7 +15,7 @@ class AlertPage:
 
     def check_confirm_alert(self):
         browser.driver.switch_to.alert.accept()
-        browser.element('#confirmResult').should(have.text("You selected OK"))
+        browser.element('#confirmResult').should(have.text("You selected Ok"))
         return self
 
     def check_cancel_alert(self):

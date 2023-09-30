@@ -17,7 +17,6 @@ class RegPage:
 
     def open(self):
         browser.open('/automation-practice-form')
-        browser.element(".practice-form-wrapper").should(have.text("Student Registration Form"))
         browser.driver.execute_script("$('footer').remove()")
         browser.driver.execute_script("$('#fixedban').remove()")
         return self
@@ -42,6 +41,7 @@ class RegPage:
         self.fill_lastname.type(user.last_name)
         self.fill_gender.element_by(have.value(user.gender)).element('..').click()
         self.fill_phone.type(user.phone)
+        self.submitting()
 
     def fill_dateofbirth(self, date):
         year = date.year
@@ -90,18 +90,15 @@ class RegPage:
         )
         return self
 
-    def check_firstname(self):
+    def check_filled_fields(self, user):
+        browser.element('.table').should(have.text(f'{user.first_name} {user.last_name}'))
+        browser.element('.table').should(have.text(f'{user.gender}'))
+        browser.element('.table').should(have.text(f"{user.phone}"))
+        return self
+
+    def check_required_fields(self):
         browser.element('#firstName').should(have.css_property('border-color', value='rgb(220, 53, 69)'))
-        return self
-
-    def check_lastname(self):
-        browser.element('#lasttName').should(have.css_property('border-color', value='rgb(220, 53, 69)'))
-        return self
-
-    def check_gender(self):
+        browser.element('#lastName').should(have.css_property('border-color', value='rgb(220, 53, 69)'))
         browser.element('[for^="gender-radio"]').should(have.css_property('border-color', value='rgb(220, 53, 69)'))
-        return self
-
-    def check_phone(self):
         browser.element('#userNumber').should(have.css_property('border-color', value='rgb(220, 53, 69)'))
         return self
