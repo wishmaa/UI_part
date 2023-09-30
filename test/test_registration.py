@@ -6,6 +6,8 @@ import allure
 reg_page = RegPage()
 
 
+@allure.label('owner', 'Roman Sh')
+@allure.feature('Registration form tests')
 @allure.title("Test registration with empty form")
 def test_empty_registration_form():
     with allure.step('Open browser'):
@@ -16,6 +18,8 @@ def test_empty_registration_form():
         reg_page.check_required_fields()
 
 
+@allure.label('owner', 'Roman Sh')
+@allure.feature('Registration form tests')
 @allure.title("Test registration with filling full form")
 def test_registration_fill_all_form():
 
@@ -42,6 +46,8 @@ def test_registration_fill_all_form():
         reg_page.should_have_user_information(Newreguser)
 
 
+@allure.label('owner', 'Roman Sh')
+@allure.feature('Registration form tests')
 @allure.title("Test registration with filling required fields")
 def test_registration_only_required():
 

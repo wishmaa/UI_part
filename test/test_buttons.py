@@ -4,6 +4,8 @@ from model.pages.buttons_page import ButtonsPage
 buttons = ButtonsPage()
 
 
+@allure.label('owner', 'Roman Sh')
+@allure.feature('Buttons page tests')
 @allure.title("Test doubleclick button")
 def test_doubleclick_button():
     with allure.step("Open buttons page"):
@@ -14,6 +16,8 @@ def test_doubleclick_button():
         buttons.check_doubleclick_message()
 
 
+@allure.label('owner', 'Roman Sh')
+@allure.feature('Buttons page tests')
 @allure.title("Test right click button")
 def test_right_click_button():
     with allure.step("Open buttons page"):
