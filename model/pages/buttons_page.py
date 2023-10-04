@@ -1,3 +1,6 @@
+import time
+from os import wait
+
 from selene import browser, have
 
 
@@ -10,6 +13,7 @@ class ButtonsPage:
         return self
 
     def click_on_doubleclick_button(self):
+        time.sleep(2)
         browser.element('#doubleClickBtn').double_click()
         return self
 
