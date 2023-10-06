@@ -10,7 +10,7 @@ class ButtonsPage:
         browser.open('/buttons')
         browser.driver.execute_script("$('footer').remove()")
         browser.driver.execute_script("$('#fixedban').remove()")
-        browser.element(['id^google_ads']).perform(command.js.remove)
+        browser.driver.execute_script("$('#id^google_ads').remove()")
         return self
 
     def click_on_doubleclick_button(self):
