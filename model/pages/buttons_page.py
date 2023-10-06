@@ -1,16 +1,13 @@
-import time
-from os import wait
-
-from selene import browser, have, command
+from selene import browser, have
+from utils.remove_ads import page_remove_ads
 
 
 class ButtonsPage:
 
     def open(self):
         browser.open('/buttons')
-        browser.driver.execute_script("$('[id^=google_ads][id$=container__]').remove()")
-        browser.driver.execute_script("$('footer').remove()")
-        browser.driver.execute_script("$('#fixedban').remove()")
+        browser.driver.maximize_window()
+        page_remove_ads(browser)
         return self
 
     def click_on_doubleclick_button(self):
