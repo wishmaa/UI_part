@@ -8,9 +8,12 @@ class ButtonsPage:
 
     def open(self):
         browser.open('/buttons')
+        browser.all("[id^=google_ads][id$=container__]").with_(timeout=3).wait_until(
+            have.size_greater_than_or_equal(3)
+        )
+        browser.all("[id^=google_ads][id$=container__]").perform(command.js.remove)
         browser.driver.execute_script("$('footer').remove()")
         browser.driver.execute_script("$('#fixedban').remove()")
-        browser.driver.execute_script("$('#id^google_ads').remove()")
         return self
 
     def click_on_doubleclick_button(self):
