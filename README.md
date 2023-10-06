@@ -13,6 +13,7 @@
     * тест на регистрацию только с обязательными полями
 
 ### <img width="3%" title="Jenkins" src="https://avatars.githubusercontent.com/u/2520748?v=4"> [Запуск проекта в Jenkins](https://jenkins.autotests.cloud/job/UI_part/)
+#### Реализована возможность выбора браузера и версии для запуска сборки
 
 ![Jenkins_run](test/picture/jenk.png)
 

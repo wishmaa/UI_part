@@ -36,7 +36,7 @@ def test_alert_prompt_box():
         alerts.open()
     with allure.step("Click prompt button"):
         alerts.prompt_button_click()
-    with allure.step("Enter text ino alert"):
+    with allure.step("Enter text into alert"):
         alerts.input_into_alert('input_name')
     with allure.step("Check after input"):
         alerts.assert_input('input_name')
