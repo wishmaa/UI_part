@@ -22,7 +22,7 @@
 
 ### В Allure Report прикрепляются видео прохождения тестов
 
-https://selenoid.autotests.cloud/video/f903e20497e569d2e9c3d345cfd8ca1c.mp4
+https://github.com/wishmaa/UI_part/assets/122519718/451d9565-cc8c-4c04-8a6e-257a4040ecea
 
 ### <img width="3%" title="Allure Report" src="test/picture/tg.png"> Оповещение о прохождении тестов c кратким отчетом Telegram
 ![Overview](test/picture/tgtg.png)
