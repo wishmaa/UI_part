@@ -20,6 +20,10 @@
 ### <img width="3%" title="Allure Report" src="https://avatars.githubusercontent.com/u/5879127?s=200&v=4"> Отчет о прохождении тестов в [Allure report](https://jenkins.autotests.cloud/job/UI_part/11/allure/#)
 ![Overview](test/picture/allure.png)
 
+### В Allure Report прикрепляются видео прохождения тестов
+
+https://selenoid.autotests.cloud/video/f903e20497e569d2e9c3d345cfd8ca1c.mp4
+
 ### <img width="3%" title="Allure Report" src="test/picture/tg.png"> Оповещение о прохождении тестов c кратким отчетом Telegram
 ![Overview](test/picture/tgtg.png)
 
